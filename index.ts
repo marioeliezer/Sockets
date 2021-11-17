@@ -6,7 +6,7 @@ import cors from 'cors';
 
 
 
-const server = new Server();
+const server = Server.instance;
 
 //body parser
 server.app.use(express.urlencoded({extended:true}));
