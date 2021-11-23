@@ -25,8 +25,13 @@ public static get instance(){
 }
 private escucharSockets(){
 console.log('Escuchando conexiones - sockets');
+
 this.io.on('connection', cliente =>{
-console.log('Cliente conectadon');
+//conectar cliente
+socket.conectarCliente(cliente);
+//configurando usuarios
+socket.configurarUsuario(cliente,this.io);
+
 //Desconectar
 socket.desconectar(cliente);
 //Mensajes
